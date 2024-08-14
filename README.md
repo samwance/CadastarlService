@@ -73,6 +73,8 @@ docker-compose up --build
 - GET /ping/ - проверка, что  сервер запустился
 - POST /result/\<query_id>/ - для отправки результата
 - POST /query/ - для получения запроса
+- POST /register/ - регистрация пользователя
+- POST /login/ - получение токена
 - GET /admin/users/ - Получение списка юзеров 
 ### Документация
 Документацию по всем эндпоинтам можно найти по адресу:
@@ -122,6 +124,28 @@ Content-Type: application/json
 }
 ```
 ![img.png](media/query.png)
+### Регистрация пользователя
+```
+POST /register/
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "123"
+}
+```
+![register.png](media/register.png)
+### Получение токена авторизации
+```
+POST /login/
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "123"
+}
+```
+![login.png](media/login.png)
 ### Получение списка пользователей
 ```
 GET /admin/users/
